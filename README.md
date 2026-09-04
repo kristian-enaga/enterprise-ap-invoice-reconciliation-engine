@@ -7,7 +7,7 @@
 - **Zero-Downtime Resilience:** Traps edge-case errors and API failures in an isolated vault without crashing active accounting pipelines.
 - **Full Execution Audit Trail:** Immutable database ledger tracking every verified bill, executive approval, and rejected fraud exception in real time.
 
-**Stack:** n8n + Supabase / PostgreSQL + OpenRouterAPI / Gemini API + QuickBooks Online API + Slack API
+**Stack:** n8n + Supabase / PostgreSQL + OpenRouter / Gemini API + QuickBooks Online API + Slack API
 
 ---
 
@@ -79,28 +79,32 @@ This production-grade n8n engine acts as an autonomous accounts payable gatekeep
 * **Phase 1: Ingestion & Payload Canonicalization:** Captures incoming vendor invoices across Gmail webhooks and document uploads.
 * **Phase 2: Autonomous AI Extraction & Schema Gates:** Extracts structured totals, line items, and vendor IDs from raw PDFs using multi-modal AI models.
 * **Phase 3: Automated Fraud & Discrepancy Gateway:** Runs programmatic math checks ($Subtotal + Tax = Total$) to detect calculation errors.
-* **Phase 4: Financial Policy Risk Router:** Dynamically routes clean invoices to database checks and flagged items to exception queues.
+* **Phase 4: State Ledger Lock:** Cross-references incoming vendor bills against historical database records to route duplicates away from accounting pipelines.
 * **Phase 5: Zero-Data-Loss Fraud & Discrepancy Vault:** Traps suspicious invoices and execution errors into PostgreSQL without halting live pipelines.
-* **Phase 6: Human-in-the-Loop Executive Approval:** Fires interactive Slack decision cards for fast authorization.
-* **Phase 7: Anti-Double-Payment Ledger Check:** Verifies invoice numbers against historical database memory to block duplicate payouts.
+* **Phase 6: Human-in-the-Loop Executive Approval & Decision Routing:** Fires interactive Slack decision cards for fast executive authorization without logging into accounting tools.
+* **Phase 7: Anti-Double-Payment Ledger Check:** Verifies valid invoice numbers against database memory to block duplicate payouts.
 * **Phase 8: Automated ERP Accounting Sync:** Posts clean and approved bills directly into QuickBooks Online in real time.
 * **Phase 9: In-Memory Canonicalization & Deduplication:** Standardizes vendor structures and deduplicates batch records.
-* **Phase 10: Immutable Audit Trail & Exception Logging:** Records all successful runs, rejected attempts, and system exceptions for complete compliance.
+* **Phase 10: Audit Trail, Discard Logging & Rejected Fraud Recording:** Logs rejected transactions, discarded duplicates, and system exceptions into an immutable audit table.
 
 ---
 
-## 🛡️ Production Resilience & Enterprise Security
+## 🛡️ Enterprise Guardrails, Global Error Handling & Resilience
 
-* **Dead-Letter Queue (DLQ):** Captures failed API calls and payload exceptions without loss of business data.
-* **Rate-Limit Mitigation:** Exponential backoff retries handle external API throttling (HTTP 429) during high volume.
-* **PII & Data Hygiene:** Validates schema boundaries using structured outputs before committing data to database tables or ERP systems.
+To protect business operations and maintain uninterrupted system uptime, this workflow implements strict enterprise-grade guardrails directly within n8n:
+
+* **Global Error Trigger & Failover Alerts:** Integrated sub-workflow error handler intercepts system failures, capturing error stacks and dispatching instant alert notifications via Gmail and Slack.
+* **API Rate Limit Mitigation & Exponential Backoff:** External HTTP calls to QuickBooks and LLM APIs use retries with exponential backoff delays to prevent rate-limit crashes (HTTP 429) during peak invoice volume.
+* **Model Fallback Chain:** AI Vision extraction routes through an automated fallback model (Google Gemini to OpenRouter) to eliminate single-point-of-failure risks during provider outages.
+* **Zero-Data-Loss Dead-Letter Queue (DLQ):** Unprocessed payloads or schema validation failures write directly to the Supabase/PostgreSQL Discrepancy Vault for audit review without corrupting accounting tables.
+* **Strict JSON Schema Enforcement:** Structured Output Parsers validate extract shape before database mutations, enforcing strict type guards on currency, tax, and date formats.
 
 ---
 
 ## 🛠️ Stack & Tooling
 
 * **Orchestration:** n8n (Self-Hosted / Cloud)
-* **AI & Multi-Modal Extraction:** OpenAI GPT-4o / Google Gemini API
+* **AI & Multi-Modal Extraction:** Google Gemini API / OpenRouter Chat Model
 * **Database & Memory Vault:** Supabase / PostgreSQL
 * **ERP Accounting:** QuickBooks Online API
 * **Human-in-the-Loop (HITL):** Slack API (Block Kit Webhooks)
