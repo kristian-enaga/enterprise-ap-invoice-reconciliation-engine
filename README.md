@@ -58,26 +58,6 @@ This production-grade n8n engine acts as an autonomous accounts payable gatekeep
 
 ## ⚙️ 10-Phase Production Architecture
 
-[ Gmail / Webhook Ingestion ] ➔ [ AI Agent Extraction ] ➔ [ Fraud & Math Gate ]
-│
-┌──────────────────────────────────────┴──────────────────────────────────────┐
-▼                                                                             ▼
-(Clean Invoice Data)                                                       (Discrepancy / High Risk)
-│                                                                             │
-▼                                                                             ▼
-[ Postgres Ledger Lock Check ]                                                  [ Discrepancy Vault / Log ]
-│                                                                             │
-┌──────────┴──────────┐                                                                  │
-▼                     ▼                                                                  │
-(Clean / New)         (Duplicate)                                                                ▼
-│                     │                                                     [ Slack Executive Guard ]
-▼                     ▼                                                                  │
-[ QuickBooks ERP ]     [ Discard Log ]                                               ┌────────────┴────────────┐
-▼                         ▼
-(Approved)                (Rejected)
-│                         │
-▼                         ▼
-[ QuickBooks ERP ]       [ Audit Log Update ]
 
 
 ### Phase Breakdown
