@@ -16,9 +16,9 @@ An automated, state-aware accounts payable engine built in n8n featuring multi-c
 ![Enterprise AP Reconciliation Engine Canvas](./enterprise-ap-reconciliation-engine-architecture.png)
 *Figure 1: n8n workflow canvas showing multi-channel ingestion, AI agent extraction, math gate, Slack approval card generation, and QuickBooks ERP sync.*
 
-[![Watch Loom Demo](https://img.shields.io/badge/Loom_Demo-Watch_System_Walkthrough-6B5B95?style=for-the-badge&logo=loom&logoColor=white)](https://www.loom.com)
+[![Watch Loom Demo](https://img.shields.io/badge/Loom_Demo-Watch_System_Walkthrough-6B5B95?style=for-the-badge&logo=loom&logoColor=white)](https://www.loom.com/share/595e7e48d6ab4a1f89263d23496f9d67)
 
-> 📹 **[Watch the Architecture & Live Execution Walkthrough on Loom](https://www.loom.com)**
+> 📹 **[Watch the Architecture & Live Execution Walkthrough on Loom](https://www.loom.com/share/595e7e48d6ab4a1f89263d23496f9d67)**
 
 ---
 
