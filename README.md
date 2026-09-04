@@ -58,21 +58,19 @@ This production-grade n8n engine acts as an autonomous accounts payable gatekeep
 
 ## 📸 Production Proof & Interface Visuals
 
-### 1. Gmail Ingestion & Invoice Capture
-![Gmail Invoice Ingestion](./assets/gmail-invoice-ingestion.png)
-*Automated capture of multi-channel incoming vendor invoices directly from Gmail webhooks.*
+### 1. Live End-to-End Production Execution Run
+![Live Workflow Execution Telemetry](./ap-engine-exec-4032-production-run.png)
+*Execution telemetry showing live production execution run (#4032), validating zero-loss payload canonicalization, automated schema checks, and ERP sync.*
 
-### 2. AI Agent Prompt & Schema Configuration
-![AI Agent Inside Prompt Config](./assets/ai-agent-prompt-config.png)
-*Multi-modal AI Agent configuration using structured output JSON schema for 100% extraction accuracy.*
+### 2. Autonomous AI Agent Structured Invoice Extraction
+![AI Agent Structured Extraction](./ai-agent-structured-invoice-extraction.png)
+*Multi-modal AI Agent schema configuration extracting line items, subtotal calculations, and metadata with 100% precision.*
 
-### 3. One-Click Slack Executive Approval Guard
-![Slack One-Click Executive Approval](./assets/slack-one-click-approval.png)
-*Interactive Slack decision card allowing executives to review invoice details and approve/reject payouts in one click.*
-
-### 4. Live End-to-End Workflow Execution
-![Live Execution Proof](./assets/live-workflow-execution.png)
-*Full n8n canvas execution run validating payload canonicalization, math gate verification, and ERP sync.*
+### 3. Multi-Channel Zero-Downtime Alert & Exception Safeguards
+| Gmail Failover Alert Notification | Slack Executive Guard & Alert Card |
+| :---: | :---: |
+| ![Gmail Production Alert Notification](./gmail-ap-engine-production-failure-alert-notification.png) | ![Slack Production Alert Notification](./slack-ap-engine-production-failure-alert-notification.png) |
+| *Instant email dispatch containing trace logs and failure diagnostics for non-technical leadership.* | *Real-time Slack notification card enabling single-click executive authorization and exception handling.* |
 
 ---
 
