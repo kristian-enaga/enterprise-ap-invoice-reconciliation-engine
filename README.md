@@ -24,7 +24,7 @@ An automated, state-aware accounts payable engine built in n8n featuring multi-c
 <summary><b>🔍 Click to view complete 10-Phase Pipeline Architecture</b></summary>
 
 - **Phase 1: Ingestion & Payload Canonicalization** → Multi-channel Gmail Trigger & Webhook ingestion paired with document parsing across mixed vendor file formats.
-- **Phase 2: Autonomous AI Extraction & Schema Gates** → Dual AI model fallback (Google Gemini & OpenAI) with Structured Output Parsers for 100% data extraction accuracy.
+- **Phase 2: Autonomous AI Extraction & Schema Gates** → Dual AI model fallback (Google Gemini & OpenRouter) with Structured Output Parsers for 100% data extraction accuracy.
 - **Phase 3: Automated Fraud & Discrepancy Gateway** → Programmatic subtotal and tax recalculation engine to trap billing errors, overcharges, and line-item mismatches.
 - **Phase 4: State Ledger Lock** → Database cross-referencing against historical vendor records to route duplicate bills away from live pipeline execution.
 - **Phase 5: Zero-Data-Loss Fraud & Discrepancy Vault** → Supabase/PostgreSQL error vault that traps and logs suspicious invoices so zero financial discrepancies slip through silently.
@@ -131,3 +131,10 @@ To protect business operations and maintain uninterrupted system uptime, this wo
 ## 📄 License
 
 Distributed under the MIT License. See `LICENSE` for details.
+
+---
+
+### 📈 Engineering Roadmap & Milestone
+* **Roadmap Phase:** Phase 2 — Automation Engineering & Production Systems
+* **Sprint Tracker:** Sprint 4 — End-to-End System Integration & Hardening
+* **Build Milestone:** Production Proof Complete (Day 79/153)
