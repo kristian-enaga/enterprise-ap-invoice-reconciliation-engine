@@ -7,7 +7,7 @@
 - **Zero-Downtime Resilience:** Traps edge-case errors and API failures in an isolated vault without crashing active accounting pipelines.
 - **Full Execution Audit Trail:** Immutable database ledger tracking every verified bill, executive approval, and rejected fraud exception in real time.
 
-**Stack:** n8n + Supabase / PostgreSQL + OpenAI GPT-4o / Gemini API + QuickBooks Online API + Slack API
+**Stack:** n8n + Supabase / PostgreSQL + OpenRouterAPI / Gemini API + QuickBooks Online API + Slack API
 
 ---
 
