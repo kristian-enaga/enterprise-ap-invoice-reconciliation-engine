@@ -56,11 +56,27 @@ This production-grade n8n engine acts as an autonomous accounts payable gatekeep
 
 ---
 
+## 📸 Production Proof & Interface Visuals
+
+### 1. Gmail Ingestion & Invoice Capture
+![Gmail Invoice Ingestion](./assets/gmail-invoice-ingestion.png)
+*Automated capture of multi-channel incoming vendor invoices directly from Gmail webhooks.*
+
+### 2. AI Agent Prompt & Schema Configuration
+![AI Agent Inside Prompt Config](./assets/ai-agent-prompt-config.png)
+*Multi-modal AI Agent configuration using structured output JSON schema for 100% extraction accuracy.*
+
+### 3. One-Click Slack Executive Approval Guard
+![Slack One-Click Executive Approval](./assets/slack-one-click-approval.png)
+*Interactive Slack decision card allowing executives to review invoice details and approve/reject payouts in one click.*
+
+### 4. Live End-to-End Workflow Execution
+![Live Execution Proof](./assets/live-workflow-execution.png)
+*Full n8n canvas execution run validating payload canonicalization, math gate verification, and ERP sync.*
+
+---
+
 ## ⚙️ 10-Phase Production Architecture
-
-
-
-### Phase Breakdown
 
 * **Phase 1: Ingestion & Payload Canonicalization:** Captures incoming vendor invoices across Gmail webhooks and document uploads.
 * **Phase 2: Autonomous AI Extraction & Schema Gates:** Extracts structured totals, line items, and vendor IDs from raw PDFs using multi-modal AI models.
