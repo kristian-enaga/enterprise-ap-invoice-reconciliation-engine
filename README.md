@@ -20,6 +20,23 @@ An automated, state-aware accounts payable engine built in n8n featuring multi-c
 
 > 📹 **[Watch the Architecture & Live Execution Walkthrough on Loom](https://www.loom.com/share/595e7e48d6ab4a1f89263d23496f9d67)**
 
+<details>
+<summary><b>🔍 Click to view complete 10-Phase Pipeline Architecture</b></summary>
+
+- **Phase 1: Ingestion & Payload Canonicalization** → Multi-channel Gmail Trigger & Webhook ingestion paired with document parsing across mixed vendor file formats.
+- **Phase 2: Autonomous AI Extraction & Schema Gates** → Dual AI model fallback (Google Gemini & OpenAI) with Structured Output Parsers for 100% data extraction accuracy.
+- **Phase 3: Automated Fraud & Discrepancy Gateway** → Programmatic subtotal and tax recalculation engine to trap billing errors, overcharges, and line-item mismatches.
+- **Phase 4: State Ledger Lock** → Database cross-referencing against historical vendor records to route duplicate bills away from live pipeline execution.
+- **Phase 5: Zero-Data-Loss Fraud & Discrepancy Vault** → Supabase/PostgreSQL error vault that traps and logs suspicious invoices so zero financial discrepancies slip through silently.
+- **Phase 6: Executive HITL Approval & Decision Routing** → Interactive Slack approval cards with real-time decision routers for one-click payout authorization or rejection.
+- **Phase 7: Anti-Double-Payment Ledger Check** → Dual Postgres/QuickBooks database memory verification to prevent paying the same invoice number twice.
+- **Phase 8: Automated ERP Accounting Sync** → Direct QuickBooks Online API integration posting clean, verified bills without manual bookkeeping.
+- **Phase 9: In-Memory Canonicalization & Deduplication** → In-memory array deduplication and payload formatting before finalizing live ledger updates.
+- **Phase 10: Immutable Audit Trail & Exception Logging** → Automatic audit record creation for rejected fraud exceptions and system discard logs to ensure 100% compliance.
+
+</details>
+
+
 ---
 
 ## 🎯 Business Problem
